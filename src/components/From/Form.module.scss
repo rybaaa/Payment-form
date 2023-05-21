@@ -1,0 +1,87 @@
+@import "../../assets/styles/scss/mixins";
+@import "../../assets/styles/scss/variables";
+
+.form {
+  max-width: 570px;
+  margin: auto;
+  width: 100%;
+  background: $bgColor;
+  box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+  border-radius: 10px;
+  padding: 35px;
+
+  .card_number {
+
+    .card_number__label {
+      @include label(100%);
+    }
+
+    .card_number__input {
+      @include input();
+    }
+
+    .card_number__error {
+    }
+  }
+
+  .card_info {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    .card_info__expiry_date {
+      width: 100%;
+      display: flex;
+      gap: 20px;
+
+      .expiry_date__items {
+        display: flex;
+        flex-direction: column;
+
+        .expiry_date__label {
+          @include label(100px);
+        }
+
+        .expiry_date__input {
+          @include input();
+          width: 100px;
+        }
+
+        .expiry_date__error {
+        }
+      }
+    }
+
+    .card_info__cvv {
+
+      .cvv__label {
+        @include label(100px);
+      }
+
+      .cvv__input {
+        @include input();
+        width: 100px;
+      }
+
+    }
+  }
+
+  .btn {
+    width: 100%;
+    height: 55px;
+    background: #2364d2;
+    border: none;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 500;
+    box-shadow: 3px 10px 20px 0 rgba(35, 100, 210, 0.3);
+    color: #fff;
+    margin: 50px 0 30px 0;
+    cursor: pointer;
+    &:hover{
+      opacity: .8;
+    }
+  }
+}
+
+
