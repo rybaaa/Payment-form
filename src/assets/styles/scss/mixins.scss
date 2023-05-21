@@ -27,4 +27,7 @@
   bottom:-20px;
   left:0;
   color:red;
+  @media screen and (max-width: 455px) {
+    font-size: 12px;
+  }
 }

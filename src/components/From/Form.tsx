@@ -30,7 +30,6 @@ export const Form = () => {
     }
 
     async function onSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-        console.log(cardNumber.length)
         e.preventDefault();
         try {
             const response = await validationApi.addProductToCart(cardNumber, month, year, cvv)
@@ -74,7 +73,8 @@ export const Form = () => {
             <div className={s.card_info}>
                 <div className={s.card_info__expiry_date}>
                     <div className={s.expiry_date__items}>
-                        <label htmlFor="cardMonth" className={s.expiry_date__label}>Month(MM)</label>
+                        <label htmlFor="cardMonth" className={s.expiry_date__label}>Month(MM) <img
+                            src={dateError ? stopSign : circleTick} alt="result" className={img_classname}/></label>
                         <input value={month} onChange={changeMonth} type="text" id={'cardMonth'} maxLength={2} required
                                className={expiry_date__input}/>
                         {dateError ? <span className={s.expiry_date__error}>{dateError}</span> : null}

@@ -38,12 +38,20 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    @media screen and (max-width: 455px) {
+      flex-direction: column;
+      gap:25px;
+      align-items: center;
+    }
 
     .card_info__expiry_date {
       position: relative;
       width: 100%;
       display: flex;
       gap: 20px;
+      @media screen and (max-width: 455px) {
+        justify-content: space-around;
+      }
 
       .expiry_date__items {
         display: flex;
@@ -122,8 +130,8 @@
 }
 
 .showImage {
-  width: 20px;
-  height: 100%;
+  width: 15px;
+  height: 15px;
 }
 
 .notToShowImage {
