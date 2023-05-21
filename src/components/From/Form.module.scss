@@ -11,16 +11,26 @@
   padding: 35px;
 
   .card_number {
+    position: relative;
 
     .card_number__label {
       @include label(100%);
     }
 
     .card_number__input {
-      @include input();
+      @include input(none, $boxShadow1);
+    }
+
+    .card_number__input__error {
+      @include input(1px solid $borderColorError, $boxShadowError);
+    }
+
+    .card_number__input__success {
+      @include input(1px solid $borderColorSuccess, $boxShadowSuccess);
     }
 
     .card_number__error {
+      @include error();
     }
   }
 
@@ -30,6 +40,7 @@
     margin-top: 30px;
 
     .card_info__expiry_date {
+      position: relative;
       width: 100%;
       display: flex;
       gap: 20px;
@@ -43,26 +54,51 @@
         }
 
         .expiry_date__input {
-          @include input();
+          @include input(none, $boxShadow1);
+          width: 100px;
+        }
+
+        .expiry_date__input__success {
+          @include input(1px solid $borderColorSuccess, $boxShadowSuccess);
+          width: 100px;
+        }
+
+        .expiry_date__input__error {
+          @include input(1px solid $borderColorError, $boxShadowError);
           width: 100px;
         }
 
         .expiry_date__error {
+          @include error();
         }
       }
     }
 
     .card_info__cvv {
+      position: relative;
 
       .cvv__label {
         @include label(100px);
       }
 
       .cvv__input {
-        @include input();
+        @include input(none, $boxShadow1);
         width: 100px;
       }
 
+      .cvv__input__success {
+        @include input(1px solid $borderColorSuccess, $boxShadowSuccess);
+        width: 100px;
+      }
+
+      .cvv__input__error {
+        @include input(1px solid $borderColorError, $boxShadowError);
+        width: 100px;
+      }
+
+      .cvv__error {
+        @include error();
+      }
     }
   }
 
@@ -78,10 +114,20 @@
     color: #fff;
     margin: 50px 0 30px 0;
     cursor: pointer;
-    &:hover{
+
+    &:hover {
       opacity: .8;
     }
   }
+}
+
+.showImage {
+  width: 20px;
+  height: 100%;
+}
+
+.notToShowImage {
+  display: none;
 }
 
 
