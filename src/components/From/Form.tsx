@@ -32,7 +32,7 @@ export const Form = () => {
     async function onSubmit(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         e.preventDefault();
         try {
-            const response = await validationApi.addProductToCart(cardNumber, month, year, cvv)
+            const response = await validationApi.addProductToCart(cardNumber.trim(), month.trim(), year.trim(), cvv.trim())
             validateCardNumber(response.data.errors.cardNumberError)
             validateDate(response.data.errors.dateError)
             validateCvv(response.data.errors.cvvError)
