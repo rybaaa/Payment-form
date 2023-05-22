@@ -6,6 +6,10 @@ This is frontend application, backend is here [Click](https://github.com/rybaaa/
 
 Before starting project you should run backend [Click](https://github.com/rybaaa/payment-form-backend)
 
+Install all the dependencies by running in the project directory:
+
+### `yarn install`
+
 In the project directory, you can run:
 
 ### `yarn start`
